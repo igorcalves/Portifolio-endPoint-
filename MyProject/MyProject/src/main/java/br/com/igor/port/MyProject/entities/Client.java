@@ -24,7 +24,7 @@ public class Client {
     @Column(name = "birthday", columnDefinition = "DATE")
     private LocalDate birthday;
 
-  
+    public Client(){}
 
 
     public Client(String name, String email, LocalDate birthday) {

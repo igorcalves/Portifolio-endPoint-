@@ -25,7 +25,7 @@ public class FakeClient {
     }
 
     private void email() {
-        int num = aleatorio.nextInt(1, 4);
+        int num = aleatorio.nextInt(1,4);
         email = this.name + randomEmailDomain(num);
 
         

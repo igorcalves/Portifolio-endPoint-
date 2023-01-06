@@ -1,17 +1,27 @@
 package br.com.igor.port.MyProject.SqlGenerated.FakerRandomData;
 
-import net.datafaker.Faker;
+import java.time.LocalDate;
 
 public class teste {
     
     public static void main(String[] args) {
 
-        Faker faker = new Faker();
+//        Faker faker = new Faker();
         
-        FakeClient fk = new FakeClient();
+        FakeProduct_Fruit fkF = new FakeProduct_Fruit();
+
+        String nome = "1997-12-23";
+        
+
+        LocalDate hoje = LocalDate.parse(nome);
+        System.out.println(hoje);
+
 
         
-       System.out.println(faker.food().ingredient());
+        
+       System.out.println(fkF.atomicCreateFoodTable());
+
+    
 
     }
 }

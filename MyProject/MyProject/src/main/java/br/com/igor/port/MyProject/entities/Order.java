@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -22,26 +23,33 @@ public class Order {
 
     private LocalDate moment;
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "orderI")
     private List<OrderItem> items = new ArrayList<>();
     
-    @OneToOne
+
+    @OneToOne()
+    @JoinColumn(nullable = false )
     private OrderStatus orderStatus;
 
     @OneToOne
+    @JoinColumn(nullable = false )
     private Client client;
 
     
 
-    public Order(LocalDate moment, OrderStatus orderStatus, Client client) {
-        this.moment = moment;
+    public Order(OrderStatus orderStatus, Client client) {
+        this.moment = LocalDate.now();
         this.orderStatus = orderStatus;
         this.client = client;
     }
 
+    public Order(){}
+
     public Long getId() {
         return id;
     }
+
+
 
     public void setId(Long id) {
         this.id = id;

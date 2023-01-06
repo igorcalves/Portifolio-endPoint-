@@ -8,12 +8,13 @@ import java.io.IOException;
 import br.com.igor.port.MyProject.SqlGenerated.FakerRandomData.FakeCategory;
 import br.com.igor.port.MyProject.SqlGenerated.FakerRandomData.FakeClient;
 import br.com.igor.port.MyProject.SqlGenerated.FakerRandomData.FakeOrderStatus;
+import br.com.igor.port.MyProject.SqlGenerated.FakerRandomData.FakeProduct_Fruit;
 
 
 public class CreateFile {
 
   public static void main(String[] args) throws IOException {
-      File file = new File("C:/Users/jbq.ilhsad02/Desktop/CDM/portifolio/MyProject/MyProject/src/main/resources/data.sql");
+      File file = new File("C:/Users/jbq.psarec05/Desktop/zkj/portifolio/Portifolio/MyProject/MyProject/src/main/resources/data.sql");
       BufferedWriter bfw = new BufferedWriter(new FileWriter(file));
       
       
@@ -56,7 +57,16 @@ public class CreateFile {
             bfw.write(fk[j]);
             bfw.newLine();
         }
-   
+        
+
+         //
+        //CLIENT
+        //
+        FakeProduct_Fruit fpk = new FakeProduct_Fruit();
+        for (int j = 0; j < 50; j++) {
+            bfw.write(fpk.atomicCreateFoodTable());
+            bfw.newLine();
+        }
 
 
     System.out.println("fim");

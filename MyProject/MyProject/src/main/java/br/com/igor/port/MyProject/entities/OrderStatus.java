@@ -1,5 +1,7 @@
 package br.com.igor.port.MyProject.entities;
 
+
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,10 +18,13 @@ public class OrderStatus {
 
     private String Status;
 
+   
 
     public OrderStatus(String status) {
         Status = status;
     }
+
+    public OrderStatus(){}
 
     public Long getId() {
         return id;

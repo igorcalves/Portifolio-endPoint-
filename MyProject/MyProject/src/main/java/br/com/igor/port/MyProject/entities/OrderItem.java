@@ -25,26 +25,29 @@ public class OrderItem {
     private Product product;
 
     @ManyToOne
-    private Order order;
+    @JoinColumn(nullable = false)
+    private Order orderI;
 
 
     public Order getOrder() {
-        return order;
+        return orderI;
     }
 
 
     public void setOrder(Order order) {
-        this.order = order;
+        this.orderI = order;
     }
 
 
 
-    public OrderItem(Integer quantity, Double price, Product product, Order order) {
+    public OrderItem(Integer quantity, Double price, Product product, Order orderI) {
         this.quantity = quantity;
         this.price = price;
         this.product = product;
-        this.order = order;
+        this.orderI = orderI;
     }
+
+    public OrderItem(){}
 
     
 
